@@ -1,131 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../src/static/css/index.css">
-    <link rel="stylesheet" href="../src/static/css/gongluechakan.css">
-    <link rel="stylesheet" href="../src/static/css/lunbotu.css">
-    <link rel="stylesheet" href="../src/static/css/lunbotutiaozhuan.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../src/static/css/index.css">
+        <link rel="stylesheet" href="../src/static/css/gongluechakan.css">
+        <link rel="stylesheet" href="../src/static/css/lunbotu.css">
+        <link rel="stylesheet" href="../src/static/css/lunbotutiaozhuan.css">
+    </head>
 
-<body>
-    <div class="hero">
-        <h1>赤途云迹</h1>
-        <div class="divider"></div>
-        <div class="sub">红色文旅一站式平台</div>
-    </div>
-
-    <div class="labelCard">
-        <div class="tab-nav">
-            <div class="tab-item"><a href="#route"><strong>精选旅游路线</strong></a></div>
-            <div class="tab-item"><a href="#punchIn"><strong>云打卡&nbsp;/&nbsp;红色景点推荐</strong></a></div>
-            <div class="tab-item"><a href="#scenicSpot"><strong>红色景点推荐</strong></a></div>
+    <body>
+        <div class="hero">
+            <h1>赤途云迹</h1>
+            <div class="divider"></div>
+            <div class="sub">红色文旅一站式平台</div>
         </div>
-        <div class="wrap">
-            <div class="top">
-                <h2 id="route">&nbsp;&nbsp;精选旅游路线<span class="eng"> &nbsp;</span></h2>
-                <div class="topContent">
-                    <div class="route-list"></div>
-                </div>
+
+        <div class="labelCard">
+            <div class="tab-nav">
+                <div class="tab-item"><a href="#route"><strong>精选旅游路线</strong></a></div>
+                <div class="tab-item"><a href="#punchIn"><strong>云打卡&nbsp;/&nbsp;红色景点推荐</strong></a></div>
+                <div class="tab-item"><a href="#scenicSpot"><strong>红色景点推荐</strong></a></div>
             </div>
-            <div class="bottomBox">
-                <div class="leftBox">
-                    <div class="leftItem">
-                        <!--红色景点购票-->
-                        <h2 id="punchIn">&nbsp;&nbsp;红色景点购票<span class="eng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h2>
-                        <div class="leftItemContent">
-                            <div class="cloud-checkin-section">
-                                <!-- 云打卡图片轮播：使用独立的单选框组，避免与下方原有的轮播互相干扰 -->
-                                <div class="radio-carousel cloud-carousel">
-                                    <!-- 隐藏的单选框 -->
-                                    <input type="radio" name="cloudSlider" id="cloudSlide1" checked>
-                                    <input type="radio" name="cloudSlider" id="cloudSlide2">
-                                    <input type="radio" name="cloudSlider" id="cloudSlide3">
-
-                                    <!-- 图片区域 -->
-                                    <div class="radio-slides">
-                                        <div class="radio-slide"><img src="./static/image/轮播图1.jpg" alt="云打卡景点一"></div>
-                                        <div class="radio-slide"><img src="./static/image/轮播图2.jpg" alt="云打卡景点二"></div>
-                                        <div class="radio-slide"><img src="./static/image/轮播图3.jpg" alt="云打卡景点三"></div>
-                                    </div>
-
-                                    <!-- 底部导航点（点击 label 就会触发对应的 input） -->
-                                    <div class="radio-nav">
-                                        <label for="cloudSlide1"></label>
-                                        <label for="cloudSlide2"></label>
-                                        <label for="cloudSlide3"></label>
-                                    </div>
-                                </div>
-
-                                <!-- 跳转按钮 -->
-                                <div class="jump-button-wrapper">
-                                    <a href="./红色景点预约系统.html" target="_blank" class="jump-btn">点击购票</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="leftItem">
-                        <div class="leftItem foodListContainer">
-                            <div class="sectionHeader simple">
-                                <h2 id="scenicSpot">红色景点推荐</h2>
-                                <a href="adminConsole.html" target="_blank" class="more-guides-link">攻略查看 &rarr;</a>
-                            </div>
-
-                            <!-- 景点与推荐指数列表 -->
-                            <ul class="spot-list">
-                                <li class="spot-item">
-                                    <span class="spot-name">井冈山革命根据地</span>
-                                    <span class="rating">★★★★★</span>
-                                </li>
-                                <li class="spot-item">
-                                    <span class="spot-name">遵义会议会址</span>
-                                    <span class="rating">★★★★★</span>
-                                </li>
-                                <li class="spot-item">
-                                    <span class="spot-name">延安革命纪念馆</span>
-                                    <span class="rating">★★★★★</span>
-                                </li>
-                                <li class="spot-item">
-                                    <span class="spot-name">西柏坡中共中央旧址</span>
-                                    <span class="rating">★★★★<span class="gray-star">★</span></span>
-                                </li>
-                                <li class="spot-item">
-                                    <span class="spot-name">南昌八一起义纪念馆</span>
-                                    <span class="rating">★★★★<span class="gray-star">★</span></span>
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="rightBox">
+            <div class="wrap">
+                <div class="top">
                     <div class="rightBoxHeader">
-                        <h2>&nbsp;&nbsp;红色故事区<span class="eng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        </h2>
+                        <h2 id="route">&nbsp;&nbsp;精选旅游路线<span class="eng">&nbsp;</span></h2>
                     </div>
-                    <div class="grid-container" id="redStoryGrid"></div>
+                    <div class="topContent">
+                        <div class="route-list"></div>
+                    </div>
+                </div>
+                <div class="bottomBox">
+                    <div class="leftBox">
+                        <div class="leftItem">
+                            <!--红色景点购票-->
+                            <div class="rightBoxHeader">
+                                <h2 id="punchIn">&nbsp;&nbsp;红色景点购票<span class="eng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h2>
+                            </div>
+                            <div class="leftItemContent">
+                                <div class="cloud-checkin-section">
+                                    <!-- 云打卡图片轮播：使用独立的单选框组，避免与下方原有的轮播互相干扰 -->
+                                    <div class="radio-carousel cloud-carousel">
+                                        <!-- 隐藏的单选框 -->
+                                        <input type="radio" name="cloudSlider" id="cloudSlide1" checked>
+                                        <input type="radio" name="cloudSlider" id="cloudSlide2">
+                                        <input type="radio" name="cloudSlider" id="cloudSlide3">
+
+                                        <!-- 图片区域 -->
+                                        <div class="radio-slides">
+                                            <div class="radio-slide"><img src="./static/image/轮播图1.jpg" alt="云打卡景点一">
+                                            </div>
+                                            <div class="radio-slide"><img src="./static/image/轮播图2.jpg" alt="云打卡景点二">
+                                            </div>
+                                            <div class="radio-slide"><img src="./static/image/轮播图3.jpg" alt="云打卡景点三">
+                                            </div>
+                                        </div>
+
+                                        <!-- 底部导航点（点击 label 就会触发对应的 input） -->
+                                        <div class="radio-nav">
+                                            <label for="cloudSlide1"></label>
+                                            <label for="cloudSlide2"></label>
+                                            <label for="cloudSlide3"></label>
+                                        </div>
+
+                                        <!-- 左右切换 -->
+                                        <button class="carousel-arrow prev" type="button" aria-label="上一张">&#8249;</button>
+                                        <button class="carousel-arrow next" type="button" aria-label="下一张">&#8250;</button>
+                                    </div>
+
+                                    <!-- 跳转按钮 -->
+                                    <div class="jump-button-wrapper">
+                                        <a href="./红色景点预约系统.html" target="_blank" class="jump-btn">点击购票</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leftItem">
+                            <div class="leftItem foodListContainer">
+                                <div class="rightBoxHeader">
+                                    <h2 id="scenicSpot">红色景点推荐</h2>
+                                    <a href="adminConsole.html" target="_blank" class="more-guides-link">攻略查看 &rarr;</a>
+                                </div>
+
+                                <!-- 景点与推荐指数列表 -->
+                                <ul class="spot-list">
+                                    <li class="spot-item">
+                                        <span class="spot-name">井冈山革命根据地</span>
+                                        <span class="rating">★★★★★</span>
+                                    </li>
+                                    <li class="spot-item">
+                                        <span class="spot-name">遵义会议会址</span>
+                                        <span class="rating">★★★★★</span>
+                                    </li>
+                                    <li class="spot-item">
+                                        <span class="spot-name">延安革命纪念馆</span>
+                                        <span class="rating">★★★★★</span>
+                                    </li>
+                                    <li class="spot-item">
+                                        <span class="spot-name">西柏坡中共中央旧址</span>
+                                        <span class="rating">★★★★<span class="gray-star">★</span></span>
+                                    </li>
+                                    <li class="spot-item">
+                                        <span class="spot-name">南昌八一起义纪念馆</span>
+                                        <span class="rating">★★★★<span class="gray-star">★</span></span>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightBox">
+                        <div class="rightBoxHeader">
+                            <h2>&nbsp;&nbsp;红色故事区<span class="eng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </h2>
+                        </div>
+                        <div class="grid-container" id="redStoryGrid"></div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
 
-
-    <footer>
-        <p>&copy;&nbsp;&nbsp;赤途云迹 —— 红色文旅一站式平台</p>
-    </footer>
+        <footer>
+            <p>&copy;&nbsp;&nbsp;赤途云迹 —— 红色文旅一站式平台</p>
+        </footer>
 
 
 
 
 
-    <!-- 精选旅游路线-->
-    <script src="./components/Javascript/routeList.js?v=1.0" defer></script>
-    <script src="./components/Javascript/splicing.js?v=1.0" defer></script>
-</body>
+        <!-- 精选旅游路线-->
+        <script src="./components/Javascript/routeList.js?v=1.0" defer></script>
+        <script src="./components/Javascript/splicing.js?v=1.0" defer></script>
+        <script src="./components/Javascript/cloudCarousel.js?v=1.0" defer></script>
+    </body>
 
 </html>

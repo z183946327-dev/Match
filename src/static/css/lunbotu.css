@@ -5,6 +5,9 @@
     overflow: hidden;
     border-radius: 8px;
     margin: 20px 0;
+    /* 图片下方留出导航点的独立区域，避免压住图片 */
+    padding-bottom: 30px;
+    background: #fff;
 }
 
 /* 隐藏单选框 */
@@ -58,10 +61,10 @@
     transform: translateX(-200%);
 }
 
-/* 底部导航点样式 */
+/* 底部导航点样式（位于图片下方的白色区域） */
 .radio-nav {
     position: absolute;
-    bottom: 10px;
+    bottom: 9px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -70,10 +73,10 @@
 }
 
 .radio-nav label {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.18);
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -83,7 +86,7 @@
 #slide2:checked~.radio-nav label:nth-child(2),
 #slide3:checked~.radio-nav label:nth-child(3) {
     background-color: #d32f2f;
-    width: 20px;
+    width: 18px;
     border-radius: 4px;
 }
 
@@ -92,6 +95,42 @@
 #cloudSlide2:checked~.radio-nav label:nth-child(2),
 #cloudSlide3:checked~.radio-nav label:nth-child(3) {
     background-color: #d32f2f;
-    width: 20px;
+    width: 18px;
     border-radius: 4px;
+}
+
+/* 左右切换按钮 */
+.carousel-arrow {
+    position: absolute;
+    top: 110px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 11;
+    opacity: 0.85;
+    transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+}
+
+.carousel-arrow.prev {
+    left: 10px;
+}
+
+.carousel-arrow.next {
+    right: 10px;
 }
