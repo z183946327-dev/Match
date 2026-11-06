@@ -123,10 +123,9 @@ Match/
 │   │       ├── routeList.js        # 首页路线数据与渲染
 │   │       ├── splicing.js         # 首页红色故事渲染与滑块
 │   │       ├── mapReuse.js         # 地图演示页可复用初始化逻辑
-│   │       ├── mapComponent.js     # 旧版地图逻辑（当前未引用）
+│   │       ├── cloudCarousel.js    # 购票轮播左右切换
 │   │       ├── maps.js             # 高德地图 SDK（本地文件）
-│   │       ├── chart.js            # Chart.js（本地文件）
-│   │       └── textScrolling.js    # 旧版滚动动画（当前未引用）
+│   │       └── chart.js            # Chart.js（本地文件）
 │   │
 │   └── static/
 │       ├── css/
@@ -135,8 +134,7 @@ Match/
 │       │   ├── lunbotu.css         # 单选框轮播样式
 │       │   ├── lunbotutiaozhuan.css# 购票跳转按钮样式
 │       │   ├── mapDemo.css         # 地图演示页面板与路线弹窗
-│       │   ├── mapComponent.css    # 旧版地图样式（当前未引用）
-│       │   ├── search.css          # 旧版搜索页样式（当前未引用）
+│       │   ├── storyPage.css       # 6 个故事详情页共用样式
 │       │   └── adminConsole.css    # 管理后台样式
 │       └── image/                  # 首页、故事、轮播图等图片资源
 ├── .gitignore
@@ -153,8 +151,7 @@ Match/
 | `lunbotutiaozhuan.css`  | 首页景点购票       | “点击购票”跳转按钮                                         |
 | `mapDemo.css`           | 4 个地图演示页     | 全屏地图、控制面板、红旗、路线弹窗                         |
 | `adminConsole.css`      | 管理后台           | 侧边栏、内容区、表格、弹窗、开关、Toast                    |
-| `mapComponent.css`      | 旧版地图（未引用） | 保留但不再被页面加载                                       |
-| `search.css`            | 旧版搜索（未引用） | 保留但不再被页面加载                                       |
+| `storyPage.css`         | 6 个故事详情页     | 正文、信息卡、时间线、人物标签等共用样式                   |
 
 ---
 
@@ -171,12 +168,12 @@ Match/
 | 延安路线演示     | `src/yanAnDemo.html`         | 路线卡片“查看详情”          | 同上                                           | 同上                                      |
 | 遵义路线演示     | `src/zuiYiDemo.html`         | 路线卡片“查看详情”          | 同上                                           | 同上                                      |
 | 西柏坡路线演示   | `src/xiBanPoDemo.html`       | 路线卡片“查看详情”          | 同上                                           | 同上                                      |
-| 南昌起义详情     | `src/nanchangUprising.html`  | 首页红色故事卡片            | 历史背景、事件经过、精神内涵                   | 页面内联样式                              |
-| 井冈山详情       | `src/jingGangShan.html`      | 首页红色故事卡片            | 根据地历史、朱毛会师、井冈山精神               | 页面内联样式                              |
-| 于都详情         | `src/Yudu.html`              | 首页红色故事卡片            | 长征出发地、夜渡于都                           | 页面内联样式                              |
-| 泸定桥详情       | `src/ludingBridge.html`      | 首页红色故事卡片            | 飞夺泸定桥、二十二勇士                         | 页面内联样式                              |
-| 遵义会议详情     | `src/zunyiConference.html`   | 首页红色故事卡片            | 伟大转折、会议意义                             | 页面内联样式                              |
-| 延安详情         | `src/yanAn.html`             | 首页红色故事卡片            | 延安十三年、延安精神                           | 页面内联样式                              |
+| 南昌起义详情     | `src/nanchangUprising.html`  | 首页红色故事卡片            | 历史背景、事件经过、精神内涵                   | 共用 `storyPage.css`                      |
+| 井冈山详情       | `src/jingGangShan.html`      | 首页红色故事卡片            | 根据地历史、朱毛会师、井冈山精神               | 共用 `storyPage.css`                      |
+| 于都详情         | `src/Yudu.html`              | 首页红色故事卡片            | 长征出发地、夜渡于都                           | 共用 `storyPage.css`                      |
+| 泸定桥详情       | `src/ludingBridge.html`      | 首页红色故事卡片            | 飞夺泸定桥、二十二勇士                         | 共用 `storyPage.css`                      |
+| 遵义会议详情     | `src/zunyiConference.html`   | 首页红色故事卡片            | 伟大转折、会议意义                             | 共用 `storyPage.css`                      |
+| 延安详情         | `src/yanAn.html`             | 首页红色故事卡片            | 延安十三年、延安精神                           | 共用 `storyPage.css`                      |
 
 > 页面之间全部使用普通 `<a href="...">` 跳转，没有前端路由，也没有 SPA 的 History API。
 
@@ -356,7 +353,6 @@ Match/
 | `mapReuse.js`     | 可复用初始化函数 `initMapDemo(config)`                     |
 | `mapDemo.css`     | 地图全屏容器、控制面板、红旗、路线弹窗样式                 |
 | `*Demo.html`      | 4 个页面分别传入中心点、范围、路线节点                     |
-| `mapComponent.js` | 旧版硬编码地图逻辑，当前未被任何页面引用                   |
 
 ### 6.2 `initMapDemo(config)` 配置
 
@@ -435,7 +431,7 @@ initMapDemo({
 - 打卡状态只保存在当前页面的 JS 对象中，刷新即丢失。
 - 地图 Key 打包在 `maps.js` 内，上线前需要配置域名白名单并改为环境化注入。
 - 节点坐标手工维护，新增节点需核对经纬度与标签偏移。
-- `mapComponent.js` 与 `mapReuse.js` 存在大量重复逻辑，前者是旧版实现，建议删除或合并。
+- 地图逻辑已统一到 `mapReuse.js`，旧版 `mapComponent.js` 已删除。
 
 ---
 
@@ -652,7 +648,7 @@ header                  标题与副标题
 | `index.html`             | `lang="en"`、`<title>Document</title>` 为占位值              | 改为 `zh-CN` 与正式标题                    |
 | 首页左栏                 | 标题已改“红色景点购票”，导航仍写“云打卡”                     | 同步导航文案                               |
 | 首页购票按钮             | `.jump-btn` 使用蓝色 `#1890ff`                               | 改为品牌红或描边按钮                       |
-| 多页面                   | 详情页样式全部内联，重复度高                                 | 抽取共享 `story.css`                       |
+| 多页面                   | 详情页曾各自内联样式                                         | 已抽取共享 `storyPage.css`                 |
 
 ---
 
@@ -764,8 +760,8 @@ header                  标题与副标题
 | P1     | 后台内置默认管理员密码                           | 安全风险                               | 移除默认值，接入真实账户体系               |
 | P1     | 导航“云打卡”与模块“红色景点购票”不一致           | 用户预期与功能不符                     | 同步文案或拆分功能                         |
 | P1     | 购票按钮为蓝色                                   | 与红色主题不一致                       | 统一品牌色                                 |
-| P2     | 6 个详情页各自内联一套 CSS                       | 维护成本高、视觉易漂移                 | 抽取共享样式与模板                         |
-| P2     | 存在未引用文件（`mapComponent.js/css`、`textScrolling.js`、`search.css`） | 增加理解成本、可能误导维护者 | 确认后删除或标注废弃                       |
+| P2     | 6 个详情页样式已抽取为 `storyPage.css`          | 维护成本已降低                         | 保持单一来源                               |
+| P2     | 未引用文件已清理（`mapComponent.*`、`textScrolling.js`、`search.css`） | 目录更清晰                     | 已完成                                     |
 | P2     | CSS 小缺陷（多余括号、`display` 覆盖）           | 局部样式不生效                         | 按 12.4 节逐项修复                         |
 | P2     | `lang="en"`、`title=Document`                    | SEO 与可访问性不佳                     | 改为中文语言声明与正式标题                 |
 | P2     | 无 lint、无测试、无构建                          | 回归风险高                             | 引入 ESLint/Prettier + Playwright 冒烟测试 |

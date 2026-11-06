@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+    background-color: #f5efe9;
+    color: #2c2c2c;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffcf8;
+    border: 2px solid #b13e3e;
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 3px solid #b13e3e;
+    padding-bottom: 1.5rem;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    color: #8b1e1e;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+}
+
+.header .subhead {
+    font-size: 1.2rem;
+    color: #5e3a3a;
+    letter-spacing: 1px;
+}
+
+.intro-card {
+    background: #fef4e9;
+    border-left: 10px solid #b13e3e;
+    padding: 1.8rem 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.intro-card p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2e1e1e;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.intro-card p:last-child {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 1.08rem;
+    color: #3f2c2c;
+    display: block;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+    margin: 2.5rem 0;
+}
+
+.info-box {
+    background: #ffffff;
+    border: 1px solid #f0dbd0;
+    border-radius: 6px;
+    padding: 1.6rem 1.8rem;
+    transition: transform 0.2s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-3px);
+}
+
+.info-box h3 {
+    font-size: 1.5rem;
+    color: #8b1e1e;
+    border-left: 6px solid #b13e3e;
+    padding-left: 14px;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1.05rem;
+}
+
+.info-box li strong {
+    min-width: 90px;
+    color: #7a2e2e;
+    font-weight: 600;
+}
+
+.info-box li span {
+    color: #2f2f2f;
+}
+
+.story-section {
+    margin: 3rem 0 2rem;
+}
+
+.story-section h2 {
+    font-size: 2rem;
+    color: #8b1e1e;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.story-block {
+    background: #fffaf5;
+    border: 1px solid #ebd9ce;
+    border-radius: 6px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.8rem;
+}
+
+.story-block p {
+    margin-bottom: 1rem;
+    font-size: 1.08rem;
+    text-align: justify;
+}
+
+.story-block p:last-child {
+    margin-bottom: 0;
+}
+
+.story-block strong {
+    color: #9e2b2b;
+}
+
+.slogan {
+    background: #b13e3e;
+    color: #fff5e6;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.4rem 1.8rem;
+    border-radius: 6px;
+    margin: 2.5rem 0;
+}
+
+.footer {
+    margin-top: 2.8rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    border-top: 2px dashed #d4b9aa;
+    font-size: 0.95rem;
+    color: #7a5a4a;
+}
+
+.person-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.person-tag {
+    background: #f0e2d6;
+    color: #7a2e2e;
+    padding: 6px 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.98rem;
+    border: 1px solid #dbb5a5;
+    transition: all 0.2s;
+}
+
+.person-tag:hover {
+    background: #b13e3e;
+    color: #fff8f0;
+    border-color: #b13e3e;
+    cursor: default;
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 2.5rem;
+}
+
+.timeline-item {
+    flex: 1 1 180px;
+    background: #f9ede4;
+    padding: 1.2rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+    border-bottom: 5px solid #b13e3e;
+}
+
+.timeline-item .date {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #8b1e1e;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.timeline-item .desc {
+    font-size: 0.98rem;
+    color: #3d2b2b;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slogan {
+        font-size: 1.3rem;
+    }
+
+    .timeline-item {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .info-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .person-tag {
+        padding: 4px 12px;
+        font-size: 0.85rem;
+    }
+
+    .slogan {
+        font-size: 1.1rem;
+    }
+}

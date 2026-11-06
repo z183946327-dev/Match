@@ -75,8 +75,7 @@ Match
 | `lunbotutiaozhuan.css` | 购票跳转按钮                                                |
 | `mapDemo.css`          | 地图演示页面板与标记样式                                    |
 | `adminConsole.css`     | 后台页面样式                                                |
-| `search.css`           | 通用面板 / 按钮样式（当前未被引用）                         |
-| `mapComponent.css`     | 地图面板、红旗、打卡弹窗样式（当前未被引用）                |
+| `storyPage.css`        | 6 个红色故事页共用的正文样式                                |
 
 ## 运行方式
 
@@ -85,6 +84,8 @@ Match
 # 双击 src/index.html（file:// 协议即可运行，页面间为相对路径）
 
 # 方式二：本地静态服务器（推荐，便于调试与相对路径解析）
+cd Match
+python -m http.server 8000
 # 访问 http://127.0.0.1:8000/src/index.html
 ```
 
@@ -109,8 +110,7 @@ Match
 ## 已知限制
 
 - 没有后端：登录、注册、购票、后台增删改均为前端演示，刷新后不保留数据。
-- 故事详情页各自内联 `<style>`，样式存在重复，后续可抽成公共样式表。
-- 以下文件当前未被任何页面引用：`mapComponent.js`、`mapComponent.css`、`textScrolling.js`、`search.css`，可按需清理。
+- 6 个故事页共用 `storyPage.css`，页面内只保留各自的内容与结构。
 
 ## 项目文档
 
